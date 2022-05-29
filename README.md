@@ -22,7 +22,7 @@ npx create-next-app@latest
 
 - `index.js` 파일의 `export default` function은 홈페이지를 호출할 때 실행 됨
 
-- `index.js` sample
+- `index.js` example
 
   ```js
   export default function Home() {
@@ -43,6 +43,31 @@ npx create-next-app@latest
   - 반면, `create-react-app`은 Client Side Rendering을 하는 React App을 만듬 (Client Side Javascript가 사용자의 모든 UI를 만듬)
 
 - `Hydration` : 정적 호스팅 또는 서버 측 렌더링을 통해 전달되는 정적 HTML 웹 페이지의 HTML 요소에 클라이언트 측 JavaScript가 이벤트 핸들러를 첨부 하여 동적 웹 페이지로 변환하는 기술입니다.
+
+## Routing
+
+- Next Framework에서 페이지 이동은 `next/link`의 `Link` component를 이용
+
+- `Link` 컴포넌트의 속성에는 `href`만 사용하고, 다른 속성의 Child component 인 `a` 태그 내에 정의
+
+- Routing example
+
+  ```js
+  import Link from "next/link";
+
+  export default function NavBar() {
+    return (
+      <div>
+        <Link href="/">
+          <a style={{ paddingRight: 10 }}>Home</a>
+        </Link>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+      </div>
+    );
+  }
+  ```
 
 ## Next.js Readme
 
