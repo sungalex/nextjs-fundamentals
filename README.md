@@ -34,6 +34,16 @@ npx create-next-app@latest
   }
   ```
 
+## Static Pre Rendering
+
+- `Next.js`의 가장 훌륭한 기능중의 하나는 앱의 페이지들이 미리 렌더링(`Server Side Rendering`) 된다는 것 임
+
+  - HTML이 서버에서 미리 렌더링되기 때문에 "첫 번째 콘텐츠가 포함된 페인트(first contentful paint, 유용한 데이터가 처음 사용자에게 표시될 때)"를 빠르게 할 수 있습니다.
+
+  - 반면, `create-react-app`은 Client Side Rendering을 하는 React App을 만듬 (Client Side Javascript가 사용자의 모든 UI를 만듬)
+
+- `Hydration` : 정적 호스팅 또는 서버 측 렌더링을 통해 전달되는 정적 HTML 웹 페이지의 HTML 요소에 클라이언트 측 JavaScript가 이벤트 핸들러를 첨부 하여 동적 웹 페이지로 변환하는 기술입니다.
+
 ## Next.js Readme
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
