@@ -10,6 +10,30 @@ Learning NextJS by Building a Tiny Movie Website.
 npx create-next-app@latest
 ```
 
+## Pages
+
+- `pages` 폴더에 있는 파일 이름으로 `Route`(URL)을 자동으로 생성 함
+
+  - `pages` 폴더의 파일 안에는 `component`를 `export default`로 선언 해야 함
+
+  - 파일 내에 있는 function 이름은 route와 상관이 없음
+
+- `react.js`를 import 하지 않아도 `JSX`를 사용할 수 있음
+
+- `index.js` 파일의 `export default` function은 홈페이지를 호출할 때 실행 됨
+
+- `index.js` sample
+
+  ```js
+  export default function Home() {
+    return (
+      <div>
+        <h1>Hello World!!!</h1>
+      </div>
+    );
+  }
+  ```
+
 ## Next.js Readme
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
