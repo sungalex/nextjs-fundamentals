@@ -154,7 +154,11 @@ export default function NavBar() {
 
 - 많이 사용하는 Next.js App 패턴 : `_app.js` -> `Layout.js` --> `Components`
 
-  - `_app.js` : Custom App 구성
+  - `_app.js` : Custom App 구성. global CSS 설정은 `_app.js`에 import
+
+    - 개별 components 파일에는 모듈별 CSS 설정을 import 하여 사용 하거나(모듈별 CSS 파일명은 `모듈명.module.css` 형태를 유지 해야함),
+
+    - components 파일 내에 ` <style jsx>{``}</style> ` 형태로 직적 선언해서 사용
 
   - `Layout.js` : `_app.js` 크기를 경량화 하기 위해, `Layout.js` 컴포넌트를 만들어서 NavBar, Footer 등 공통 Layout을 정의함. `children` 파라미터로 Child Component(페이지)를 전달 받음
 
@@ -164,6 +168,7 @@ export default function NavBar() {
 
     ```js
     import Layout from "../components/Layout";
+    import "../styles/globals.css";
 
     export default function App({ Component, pageProps }) {
       return (
@@ -206,7 +211,7 @@ export default function NavBar() {
     }
     ```
 
-  - `Seo.js` example
+  - `Seo.js` example : SEO 설정이 필요한 일반적인 항목에 대한 정보는 Google [검색엔진 최적화(SEO) 가이드](https://developers.google.com/search/docs/beginner/seo-starter-guide) 참고
 
     ```js
     import Head from "next/head";
