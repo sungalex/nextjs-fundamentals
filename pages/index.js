@@ -5,7 +5,9 @@ import Seo from "../components/Seo";
 export default function Home({ results }) {
   const router = useRouter();
   const onClick = (id, title) => {
-    router.push(
+    router.push(`/movies/${title}/${id}`); // Catch All URL
+    /*
+    router.push(  // query object를 포함하여 전달하는 방식
       {
         pathname: `/movies/${id}`,
         query: {
@@ -14,6 +16,7 @@ export default function Home({ results }) {
       },
       `/movies/${id}`
     );
+    */
   };
   return (
     <div className="container">
@@ -25,17 +28,10 @@ export default function Home({ results }) {
           key={movie.id}>
           {/* <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} /> */}
           <img src={`/api/movies/image${movie.poster_path}`} />
-          <Link
-            href={{
-              pathname: `/movies/${movie.id}`,
-              query: {
-                title: movie.original_title,
-              },
-            }}
-            as={`/movies/${movie.id}`}>
-            <a>
-              <h4>{movie.original_title}</h4>
-            </a>
+          <Link href={`/movies/${movie.original_title}/${movie.id}`}>
+            <h4>
+              <a>{movie.original_title}</a>
+            </h4>
           </Link>
         </div>
       ))}
