@@ -228,9 +228,16 @@ export default function NavBar() {
 
   - Poster Image : https://image.tmdb.org/t/p/w500/${movie.poster_path}
 
-- API_KEY는 `.env` 파일에 저장하고, public repository에 commit 시 포함하지 않도록 함(`.gitignore`에 `.env` 추가)
+- API_KEY는 project root folder에 `.env` 파일에 저장하고, public repository에 commit 시 포함하지 않도록 함(`.gitignore`에 `.env` 추가)
 
   - Borwser > Inspect > Network 탭에서 Request 한 URL을 확인할 수 있기 때문에 숨겨지는 것은 아님(URL에 API_KEY가 포함되어 있음)
+
+  - `.env` format (한 행에 하나의 환경변수 저장. `;` 등 line-end 문자 사용하지 않음. Key, Value 사이에 공백없이 `=` 문자 사용)
+
+    ```
+    API_KEY=xxxxxxxxxxxxxxxxxxxx
+    ANOTHER_KEY=yyyyyyyyyyy
+    ```
 
 ### Redirects and Rewrites
 
